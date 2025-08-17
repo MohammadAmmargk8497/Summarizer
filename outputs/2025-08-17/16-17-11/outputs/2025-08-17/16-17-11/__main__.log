@@ -1,0 +1,8 @@
+[2025-08-17 16:17:11,965][werkzeug][WARNING] -  * Debugger is active!
+[2025-08-17 16:17:11,973][werkzeug][INFO] -  * Debugger PIN: 558-924-844
+[2025-08-17 16:17:25,954][werkzeug][INFO] - 127.0.0.1 - - [17/Aug/2025 16:17:25] "[33mGET / HTTP/1.1[0m" 404 -
+[2025-08-17 16:17:25,973][werkzeug][INFO] - 127.0.0.1 - - [17/Aug/2025 16:17:25] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+[2025-08-17 16:17:25,997][werkzeug][INFO] - 127.0.0.1 - - [17/Aug/2025 16:17:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-08-17 16:17:26,073][werkzeug][INFO] - 127.0.0.1 - - [17/Aug/2025 16:17:26] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+[2025-08-17 16:17:35,641][werkzeug][INFO] - 192.168.1.7 - - [17/Aug/2025 16:17:35] "[33mGET / HTTP/1.1[0m" 404 -
+[2025-08-17 16:17:35,689][werkzeug][INFO] - 192.168.1.7 - - [17/Aug/2025 16:17:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

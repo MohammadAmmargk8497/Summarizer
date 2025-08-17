@@ -1,0 +1,15 @@
+
+defaults:
+  - _self_
+
+# Application specific configuration
+app:
+  name: "summariser"
+  version: "0.1.0"
+
+# LLM model configuration
+model:
+  name: "gemini-2.5-flash"
+  temperature: 0.7
+  max_tokens: 512
+
