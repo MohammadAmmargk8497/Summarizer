@@ -1,6 +1,6 @@
 # Text Summarizer
 
-This project is a text summarization tool that uses a Python backend powered by Google's Gemini Pro to generate summaries and key points from text. It also includes a Chrome extension that allows you to summarize web pages or selected text directly in your browser.
+Have you ever felt that after reading a 1000 word blog midway you find that this is not what you are looking for exactly? Or you just want to get a crux of the article before you start to invest your time reading it? This project is a text summarization/keypoint extraction tool that uses a Python backend powered by Google's Gemini Flash to generate summaries and key points from text. It also includes a Chrome extension that allows you to summarize web pages or selected text directly in your browser.
 <img width="1280" height="993" alt="image" src="https://github.com/user-attachments/assets/de9cedfe-f61c-45d3-8b57-b50c17b3d755" />
 
 ## Features
