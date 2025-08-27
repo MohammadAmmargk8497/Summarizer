@@ -11,13 +11,14 @@ from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import LLMChain
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+from langchain_core.exceptions import OutputParserException
 from dotenv import load_dotenv
 load_dotenv()
 # Create Flask app
 app = Flask(__name__)
 
 # Constants
-MAX_TEXT_LENGTH = 10000  # Characters
+MAX_TEXT_LENGTH = 20000  # Characters
 MIN_TEXT_LENGTH = 50     # Characters
 
 # Define output schemas
@@ -41,7 +42,7 @@ keypoints_format_instructions = keypoints_parser.get_format_instructions()
 
 # Define prompts
 SUMMARY_PROMPT = """
-Please provide a concise summary of the following text. 
+Please provide a summary of the following text. 
 Focus on key points and main ideas. 
 Return only the summary text without any introductory phrases.
 
@@ -53,6 +54,8 @@ Text:
 
 KEYPOINTS_PROMPT = """
 From the following text, extract the key sentences that capture the main points. 
+Return the keypoints as a JSON object with a single key "keypoints" which is a list of strings.
+If no keypoints are found, return an empty list.
 
 Text:
 {text}
@@ -139,6 +142,9 @@ def keypoints():
     try:
         result = app.keypoints_chain.run(text=text)
         return jsonify({"keypoints": result["keypoints"]})
+    except OutputParserException as e:
+        logger.error(f"Failed to parse LLM output: {e}")
+        return jsonify({"error": "Failed to process output from the language model."}), 500
     except Exception as e:
         logger.exception("Keypoints extraction error")
         return jsonify({"error": "Processing failed"}), 500
